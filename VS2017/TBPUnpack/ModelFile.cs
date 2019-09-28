@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace TBPUnpack
@@ -17,6 +13,20 @@ namespace TBPUnpack
         public ModelFile()
         {
 
+        }
+
+        public static bool TryParse(string inputFile, out ModelFile modelFile)
+        {
+            try
+            {
+                modelFile = Deserialize(inputFile);
+                return true;
+            }
+            catch (Exception)
+            {
+                modelFile = null;
+                return false;
+            }
         }
 
         public static ModelFile Deserialize(string inputFile)
