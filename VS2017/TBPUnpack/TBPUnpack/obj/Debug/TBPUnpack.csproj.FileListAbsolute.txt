@@ -1,0 +1,10 @@
+E:\prog\sharp\Tekla-tbp-unpack\VS2017\TBPUnpack\TBPUnpack\bin\Debug\TBPUnpack.exe.config
+E:\prog\sharp\Tekla-tbp-unpack\VS2017\TBPUnpack\TBPUnpack\bin\Debug\TBPUnpack.exe
+E:\prog\sharp\Tekla-tbp-unpack\VS2017\TBPUnpack\TBPUnpack\bin\Debug\TBPUnpack.pdb
+E:\prog\sharp\Tekla-tbp-unpack\VS2017\TBPUnpack\TBPUnpack\obj\Debug\TBPUnpack.csprojAssemblyReference.cache
+E:\prog\sharp\Tekla-tbp-unpack\VS2017\TBPUnpack\TBPUnpack\obj\Debug\TBPUnpack.MainForm.resources
+E:\prog\sharp\Tekla-tbp-unpack\VS2017\TBPUnpack\TBPUnpack\obj\Debug\TBPUnpack.Properties.Resources.resources
+E:\prog\sharp\Tekla-tbp-unpack\VS2017\TBPUnpack\TBPUnpack\obj\Debug\TBPUnpack.csproj.GenerateResource.cache
+E:\prog\sharp\Tekla-tbp-unpack\VS2017\TBPUnpack\TBPUnpack\obj\Debug\TBPUnpack.csproj.CoreCompileInputs.cache
+E:\prog\sharp\Tekla-tbp-unpack\VS2017\TBPUnpack\TBPUnpack\obj\Debug\TBPUnpack.exe
+E:\prog\sharp\Tekla-tbp-unpack\VS2017\TBPUnpack\TBPUnpack\obj\Debug\TBPUnpack.pdb
