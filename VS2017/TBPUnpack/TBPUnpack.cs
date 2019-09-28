@@ -38,7 +38,7 @@ namespace TBPUnpack
             {
                 UnZipToTmpDirectory();
                 GetModelsNames();
-                CopyModelsToOutputDirectory();
+                MoveModelsToOutputDirectory();
             }
             finally
             {
@@ -74,7 +74,7 @@ namespace TBPUnpack
             }
         }
 
-        internal void CopyModelsToOutputDirectory()
+        internal void MoveModelsToOutputDirectory()
         {
             var mainDirs = Directory.GetDirectories(tmpDir);
 
@@ -87,7 +87,7 @@ namespace TBPUnpack
 
                     try
                     {
-                        File.Copy(inputFileName, outputFileName, true);
+                        File.Move(inputFileName, outputFileName);
                     }
                     catch (Exception) { }
                 }
