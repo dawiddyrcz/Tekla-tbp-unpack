@@ -26,26 +26,25 @@ namespace TBPUnpack
 
         public void Unpack()
         {
+            if (Directory.Exists(outputPath).Equals(false))
+                Directory.CreateDirectory(outputPath);
+
+            UnpackTBP();
+        }
+
+        internal void UnpackTBP()
+        {
             try
             {
-                if (Directory.Exists(outputPath).Equals(false))
-                    Directory.CreateDirectory(outputPath);
-
-                UnpackTBP();
+                UnZipToTmpDirectory();
+                GetModelsNames();
+                CopyModelsToOutputDirectory();
             }
             finally
             {
                 if (Directory.Exists(tmpDir))
                     TryToDeleteDirectory(tmpDir);
             }
-        }
-
-        internal void UnpackTBP()
-        {
-            UnZipToTmpDirectory();
-            GetModelsNames();
-            CopyModelsToOutputDirectory();
-            DeleteTmpDirectory();
         }
 
         private string tmpDir = string.Empty;
@@ -60,19 +59,39 @@ namespace TBPUnpack
             System.IO.Compression.ZipFile.ExtractToDirectory(inputPath, tmpDir);
         }
 
+        private List<ModelFile> modelFiles = new List<ModelFile>();
+
         internal void GetModelsNames()
         {
-            throw new NotImplementedException();
+            var filesWithModelFileDatas = GetFilesWithModelFileDatas();
+
+            foreach (var filePath in filesWithModelFileDatas)
+            {
+                if (ModelFile.TryParse(filePath, out ModelFile modelFile))
+                {
+                    modelFiles.Add(modelFile);
+                }
+            }
         }
 
         internal void CopyModelsToOutputDirectory()
         {
-            throw new NotImplementedException();
-        }
+            var mainDirs = Directory.GetDirectories(tmpDir);
 
-        internal void DeleteTmpDirectory()
-        {
-            throw new NotImplementedException();
+            foreach (var mainDir in mainDirs)
+            {
+                foreach (var modelFile in modelFiles)
+                {
+                    var inputFileName = Path.Combine(mainDir, modelFile.Location);
+                    var outputFileName = Path.Combine(outputPath, modelFile.Name);
+
+                    try
+                    {
+                        File.Copy(inputFileName, outputFileName, true);
+                    }
+                    catch (Exception) { }
+                }
+            }
         }
 
         internal void TryToDeleteDirectory(string dirPath)
@@ -92,6 +111,20 @@ namespace TBPUnpack
                 Directory.Delete(dirPath);
             }
             catch (Exception) { }
+        }
+
+        internal List<string> GetFilesWithModelFileDatas()
+        {
+            var output = new List<string>();
+            var mainDirs = Directory.GetDirectories(tmpDir);
+
+            foreach (var mainDir in mainDirs)
+            {
+                var modelreferencesDirs = Path.Combine(mainDir, "modelreferences");
+                output.AddRange(Directory.GetFiles(modelreferencesDirs));
+            }
+
+            return output;
         }
     }
 }

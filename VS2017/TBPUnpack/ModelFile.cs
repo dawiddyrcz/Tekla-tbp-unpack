@@ -31,8 +31,18 @@ namespace TBPUnpack
 
         public static ModelFile Deserialize(string inputFile)
         {
-            var serializer = new XmlSerializer(typeof(ModelFile));
-            return serializer.Deserialize(File.OpenRead(inputFile)) as ModelFile;
+            FileStream fileStream = null;
+            try
+            {
+                fileStream = File.OpenRead(inputFile);
+                var serializer = new XmlSerializer(typeof(ModelFile));
+                return serializer.Deserialize(fileStream) as ModelFile;
+            }
+            finally
+            {
+                if (fileStream != null) fileStream.Close();
+                if (fileStream != null) fileStream.Dispose();
+            }
         }
     }
 }
