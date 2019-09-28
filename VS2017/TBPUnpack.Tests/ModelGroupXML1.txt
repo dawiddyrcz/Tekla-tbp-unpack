@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SchemaVersion="6">
+  <Identifier>project://modelgroups/51ce4117-8aa6-4d92-b8d8-85fc5288b347</Identifier>
+  <Owner>0147d568-fc4e-413f-8fc9-dbfb72851da3</Owner>
+  <Timestamp>2018-05-17T07:43:55.1273322Z</Timestamp>
+  <Status>Default</Status>
+  <Name>Reference Models</Name>
+  <Index>0</Index>
+  <IsExpanded>true</IsExpanded>
+  <ModelFiles>
+    <string>project://modelreferences/6eeb9730-407b-4301-8c21-30ec5cad5dcc</string>
+  </ModelFiles>
+</ModelGroup>

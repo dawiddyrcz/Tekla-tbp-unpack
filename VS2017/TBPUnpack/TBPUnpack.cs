@@ -26,10 +26,18 @@ namespace TBPUnpack
 
         public void Unpack()
         {
-            if (Directory.Exists(outputPath).Equals(false))
-                Directory.CreateDirectory(outputPath);
+            try
+            {
+                if (Directory.Exists(outputPath).Equals(false))
+                    Directory.CreateDirectory(outputPath);
 
-            UnpackTBP();
+                UnpackTBP();
+            }
+            finally
+            {
+                if (Directory.Exists(tmpDir))
+                    TryToDeleteDirectory(tmpDir);
+            }
         }
 
         internal void UnpackTBP()
@@ -40,9 +48,16 @@ namespace TBPUnpack
             DeleteTmpDirectory();
         }
 
+        private string tmpDir = string.Empty;
+
         internal void UnZipToTmpDirectory()
         {
-            throw new NotImplementedException();
+        AGAIN:
+            tmpDir = Path.Combine(outputPath, "tmp_" + Guid.NewGuid().ToString());
+            if (Directory.Exists(tmpDir)) goto AGAIN;
+            Directory.CreateDirectory(tmpDir);
+
+            System.IO.Compression.ZipFile.ExtractToDirectory(inputPath, tmpDir);
         }
 
         internal void GetModelsNames()
@@ -58,6 +73,25 @@ namespace TBPUnpack
         internal void DeleteTmpDirectory()
         {
             throw new NotImplementedException();
+        }
+
+        internal void TryToDeleteDirectory(string dirPath)
+        {
+            try
+            {
+                foreach (var dir in Directory.GetDirectories(dirPath))
+                {
+                    TryToDeleteDirectory(dir);
+                }
+
+                foreach (var file in Directory.GetFiles(dirPath))
+                {
+                    File.Delete(file);
+                }
+
+                Directory.Delete(dirPath);
+            }
+            catch (Exception) { }
         }
     }
 }
