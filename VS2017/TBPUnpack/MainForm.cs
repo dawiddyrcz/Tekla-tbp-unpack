@@ -52,8 +52,8 @@ namespace TBPUnpack
         {
             try
             {
-                var tbpUnpack = new TBPUnpack();
-                tbpUnpack.Unpack(inputFile_textBox.Text, outputDir_textBox.Text);
+                var tbpUnpack = new TBPUnpack(inputFile_textBox.Text, outputDir_textBox.Text);
+                tbpUnpack.Unpack();
 
                 System.Diagnostics.Process.Start(outputDir_textBox.Text);
             }
