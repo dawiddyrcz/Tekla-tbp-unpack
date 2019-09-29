@@ -62,5 +62,27 @@ namespace TBPUnpack
                 MessageBox.Show(ex.Message, "Error");
             }
         }
+
+        private void Github_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(github_linkLabel.Text);
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void Warehouse_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(warehouse_linkLabel.Text);
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }
