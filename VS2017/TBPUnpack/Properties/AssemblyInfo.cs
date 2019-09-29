@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TBPUnpack")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Program to extact models from Tekla Bimsight *.tbp files")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("DDBIM")]
 [assembly: AssemblyProduct("TBPUnpack")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright © Dawid Dyrcz 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

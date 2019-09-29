@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿//Copyright © Dawid Dyrcz 2019 see LICENSE file
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TBPUnpack
@@ -45,7 +39,7 @@ namespace TBPUnpack
             {
                 outputDir_textBox.Text = GenerateOutputDirPath(inputFile_textBox.Text);
             }
-            catch (Exception ex) { }
+            catch (Exception) { }
         }
 
         private void Unpack_button_Click(object sender, EventArgs e)
@@ -69,9 +63,7 @@ namespace TBPUnpack
             {
                 System.Diagnostics.Process.Start(github_linkLabel.Text);
             }
-            catch (Exception)
-            {
-            }
+            catch (Exception) { }
         }
 
         private void Warehouse_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -80,9 +72,7 @@ namespace TBPUnpack
             {
                 System.Diagnostics.Process.Start(warehouse_linkLabel.Text);
             }
-            catch (Exception)
-            {
-            }
+            catch (Exception) { }
         }
     }
 }

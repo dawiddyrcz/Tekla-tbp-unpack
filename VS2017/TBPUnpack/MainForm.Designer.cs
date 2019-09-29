@@ -1,4 +1,5 @@
-﻿namespace TBPUnpack
+﻿//Copyright © Dawid Dyrcz 2019 see LICENSE file
+namespace TBPUnpack
 {
     partial class MainForm
     {
@@ -46,7 +47,7 @@
             // 
             // inputFile_textBox
             // 
-            this.inputFile_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.inputFile_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputFile_textBox.Location = new System.Drawing.Point(7, 40);
             this.inputFile_textBox.Name = "inputFile_textBox";
@@ -56,7 +57,7 @@
             // 
             // outputDir_textBox
             // 
-            this.outputDir_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.outputDir_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outputDir_textBox.Location = new System.Drawing.Point(7, 79);
             this.outputDir_textBox.Name = "outputDir_textBox";

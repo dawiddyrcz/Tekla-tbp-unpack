@@ -5,14 +5,15 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TBPUnpack.Tests")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("TBPUnpack")]
+[assembly: AssemblyDescription("Program to extact models from Tekla Bimsight *.tbp files")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TBPUnpack.Tests")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCompany("DDBIM")]
+[assembly: AssemblyProduct("TBPUnpack")]
+[assembly: AssemblyCopyright("Copyright © Dawid Dyrcz 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from

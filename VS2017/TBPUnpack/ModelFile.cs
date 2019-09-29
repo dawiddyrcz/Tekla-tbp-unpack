@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Copyright © Dawid Dyrcz 2019 see LICENSE file
+using System;
 using System.IO;
 using System.Xml.Serialization;
 

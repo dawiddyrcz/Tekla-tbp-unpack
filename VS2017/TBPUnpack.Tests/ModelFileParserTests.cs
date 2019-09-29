@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿//Copyright © Dawid Dyrcz 2019 see LICENSE file
+using NUnit.Framework;
 using System;
 using System.IO;
 
