@@ -80,8 +80,13 @@ namespace TBPUnpack
         {
             var mainDirs = Directory.GetDirectories(tmpDir);
 
-            foreach (var mainDir in mainDirs)
+            var mainDirsList = new List<string>(mainDirs);
+
+            //Sometimes there are no aditional directory (there are no maindir - dirs are extracted directly to tmpDIr)
+            var index = mainDirsList.FindIndex(dir => dir.Contains("modelreferences"));
+            if (index >= 0)
             {
+                var mainDir = tmpDir;
                 foreach (var modelFile in modelFiles)
                 {
                     var inputFileName = Path.Combine(mainDir, modelFile.Location);
@@ -92,6 +97,23 @@ namespace TBPUnpack
                         File.Move(inputFileName, outputFileName);
                     }
                     catch (Exception) { }
+                }
+            }
+            else //But sometimes are aditional directory (or more i dont know)
+            {
+                foreach (var mainDir in mainDirs)
+                {
+                    foreach (var modelFile in modelFiles)
+                    {
+                        var inputFileName = Path.Combine(mainDir, modelFile.Location);
+                        var outputFileName = Path.Combine(outputPath, modelFile.Name);
+
+                        try
+                        {
+                            File.Move(inputFileName, outputFileName);
+                        }
+                        catch (Exception) { }
+                    }
                 }
             }
         }
@@ -120,10 +142,22 @@ namespace TBPUnpack
             var output = new List<string>();
             var mainDirs = Directory.GetDirectories(tmpDir);
 
-            foreach (var mainDir in mainDirs)
+            var mainDirsList = new List<string>(mainDirs);
+
+            //Sometimes there are no aditional directory (there are no maindir - dirs are extracted directly to tmpDIr)
+            var index = mainDirsList.FindIndex(dir => dir.Contains("modelreferences"));
+            if (index >=0)
             {
-                var modelreferencesDirs = Path.Combine(mainDir, "modelreferences");
+                var modelreferencesDirs = mainDirsList[index];
                 output.AddRange(Directory.GetFiles(modelreferencesDirs));
+            }
+            else//But sometimes are aditional directorvy (or more i dont know)
+            {
+                foreach (var mainDir in mainDirs)
+                {
+                    var modelreferencesDirs = Path.Combine(mainDir, "modelreferences");
+                    output.AddRange(Directory.GetFiles(modelreferencesDirs));
+                }
             }
 
             return output;
