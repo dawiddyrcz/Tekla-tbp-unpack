@@ -47,7 +47,7 @@ namespace TBPUnpack
             // 
             // inputFile_textBox
             // 
-            this.inputFile_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.inputFile_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputFile_textBox.Location = new System.Drawing.Point(7, 40);
             this.inputFile_textBox.Name = "inputFile_textBox";
@@ -57,7 +57,7 @@ namespace TBPUnpack
             // 
             // outputDir_textBox
             // 
-            this.outputDir_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.outputDir_textBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outputDir_textBox.Location = new System.Drawing.Point(7, 79);
             this.outputDir_textBox.Name = "outputDir_textBox";
@@ -146,22 +146,22 @@ namespace TBPUnpack
             this.label3.TabIndex = 9;
             this.label3.Text = "Other Tekla tools:";
             // 
-            // linkLabel1
+            // github_linkLabel
             // 
             this.github_linkLabel.AutoSize = true;
             this.github_linkLabel.Location = new System.Drawing.Point(37, 123);
-            this.github_linkLabel.Name = "linkLabel1";
+            this.github_linkLabel.Name = "github_linkLabel";
             this.github_linkLabel.Size = new System.Drawing.Size(242, 13);
             this.github_linkLabel.TabIndex = 10;
             this.github_linkLabel.TabStop = true;
             this.github_linkLabel.Text = "https://github.com/dawiddyrcz/Tekla-tbp-unpack";
             this.github_linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Github_linkLabel_LinkClicked);
             // 
-            // linkLabel2
+            // warehouse_linkLabel
             // 
             this.warehouse_linkLabel.AutoSize = true;
             this.warehouse_linkLabel.Location = new System.Drawing.Point(37, 162);
-            this.warehouse_linkLabel.Name = "linkLabel2";
+            this.warehouse_linkLabel.Name = "warehouse_linkLabel";
             this.warehouse_linkLabel.Size = new System.Drawing.Size(203, 13);
             this.warehouse_linkLabel.TabIndex = 11;
             this.warehouse_linkLabel.TabStop = true;
@@ -172,7 +172,7 @@ namespace TBPUnpack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 181);
+            this.ClientSize = new System.Drawing.Size(466, 182);
             this.Controls.Add(this.warehouse_linkLabel);
             this.Controls.Add(this.github_linkLabel);
             this.Controls.Add(this.label3);
@@ -187,7 +187,7 @@ namespace TBPUnpack
             this.Controls.Add(this.inputFile_textBox);
             this.MinimumSize = new System.Drawing.Size(450, 220);
             this.Name = "MainForm";
-            this.Text = "TBP Unpack";
+            this.Text = "TBP Unpack 1.1";
             this.ResumeLayout(false);
             this.PerformLayout();
 
